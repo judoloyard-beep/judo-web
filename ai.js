@@ -24,3 +24,20 @@ function jawabAI(pesan) {
 
     return "Maaf, aku belum memahami pertanyaanmu. Coba tanyakan hal lain!";
 }
+
+function kirimPesan() {
+    let input = document.getElementById("pesan");
+    let chat = document.getElementById("chat");
+
+    let pesan = input.value.trim();
+
+    if (pesan === "") return;
+
+    chat.innerHTML += `<p><b>Kaka:</b> ${pesan}</p>`;
+
+    let jawaban = jawabAI(pesan);
+
+    chat.innerHTML += `<p><b>JUDO AI:</b> ${jawaban}</p>`;
+
+    input.value = "";
+}
